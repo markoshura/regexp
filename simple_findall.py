@@ -6,35 +6,35 @@
 
 # 1 a 1 2 b ---> a, b
 # z 2 y     ---> z, y
-REGEXP_1 = ''
+REGEXP_1 = '[abzy]'
 
 # aaa bbb ccc ---> aaa, bbb, ccc
 # ddd eee fgh ---> ddd, eee, fgh
 # a1b c2d e3f ---> a1b, c2d, e3f
-REGEXP_2 = ''
+REGEXP_2 = '\S+'
 
 # a aa aaa ---> aa, aaa
 # b bb bbb ---> bb, bbb
 # a bb aaa ---> bb, aaa
-REGEXP_3 = ''
+REGEXP_3 = '\S{2,3}'
 
 # 1.1.1.1 aaaa bbbbb      ---> 1.1.1.1
 # a.a.a.a bbbb 2.2.2.2    ---> 2.2.2.2
 # 3.3.3.3 cccc 4.4.4.4    ---> 3.3.3.3, 4.4.4.4
 # 255.23.0.1 cccc 4.4.4.4 ---> 255.23.0.1, 4.4.4.4
 # 255.0.23.1 cccc 4.4.4.4 ---> 255.0.23.1, 4.4.4.4
-REGEXP_4 = ''
+REGEXP_4 = '\d+[.]\d+[.]\d+[.]\d+'
 
 # aaa Abbb ccc ---> Abbb
 # Aaa Abbb ccc ---> Aaa, Abbb
 # Caa Cbb Accc ---> Accc
-REGEXP_5 = ''
+REGEXP_5 = r'\bA\S+'
 
 # a b c d e f ---> a, b, e, f
 # abcdef      ---> a, b, e, f
 # adf         ---> a, f
 # acf         ---> a, f
-REGEXP_6 = ''
+REGEXP_6 = '[abef]'
 
 # aaa +1.0 bb              ---> +1.0
 # aaa -1.0 bb              ---> -1.0
